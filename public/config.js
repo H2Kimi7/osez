@@ -9,7 +9,7 @@ window.EZ_CONFIG = {
   LICENSE_CODE: '', // EZ THEME的授权码 确保下方 SiteName 修改完成
 
   // 面板类型配置 - 请选择您使用的面板类型
-  PANEL_TYPE: 'V2board', // 可选值: 'V2board', 'Xiao-V2board' 或 'Xboard'
+  PANEL_TYPE: 'Xiao-V2board', // 可选值: 'V2board', 'Xiao-V2board' 或 'Xboard'
   // 说明: 
   // 1. V2board: 标准V2board面板，使用默认请求格式
   // 2. Xiao-V2board: Xiao修改版面板，使用特殊格式的请求参数
@@ -29,9 +29,8 @@ window.EZ_CONFIG = {
     // 支持字符串形式(单个API地址)或数组形式(多个备选API地址)
     // 多个地址时，会按顺序检测可用性，并使用第一个可用的地址
     staticBaseUrl: [
-      'https://test.test.test/api/v1',
-      'https://test.test.test/api/v1',
-      'https://test.test.test/api/v1'
+      'http://apiapi.onestep.cam/api/v1',
+      'https://apiapi.onestep.lat/api/v1'
     ],
     
     // 自动获取模式配置 (urlMode = 'auto'时使用)
@@ -61,10 +60,10 @@ window.EZ_CONFIG = {
   
   // ====================  网站基础配置  ====================
   SITE_CONFIG: {
-    siteName: 'EZ THEME',
-    siteDescription: 'EZ UI',
+    siteName: 'One Step',
+    siteDescription: '一步到位的稳定网络加速服务',
     // copyright会自动使用当前年份
-    copyright: `© ${new Date().getFullYear()} EZ THEME. All Rights Reserved.`,
+    copyright: `© ${new Date().getFullYear()} One Step. All Rights Reserved.`,
     
     // 是否显示标题中的网站Logo (true=显示, false=隐藏)
     showLogo: true,
@@ -95,7 +94,7 @@ window.EZ_CONFIG = {
     defaultTheme: 'light',
 
     // 主题色 (16进制颜色值)
-    primaryColor: '#355cc2',
+    primaryColor: '#D34B66',
 
     // 是否启用落地页 (true=启用, false=禁用) 
     enableLandingPage: true // 默认启用
@@ -121,10 +120,10 @@ window.EZ_CONFIG = {
       enabled: true,
       
       // 弹窗标题
-      title: "用户须知 (可自定义开启)",
+      title: "用户须知",
       
       // 弹窗内容 (支持HTML)
-      content: "<p><strong>欢迎使用我们的服务！</strong></p><p>请注意以下事项：</p><ul><li>请妥善保管您的账号信息</li><li>如有问题请联系客服</li></ul>",
+      content: "<p><strong>欢迎来到One Step！</strong></p><p>请注意以下事项：</p><ul><li>请妥善保管您的账号信息</li><li>如有问题请联系客服</li></ul>",
       
       // 冷却时间（小时），在此时间内不会再次显示弹窗
       cooldownHours: 0,
@@ -208,7 +207,7 @@ window.EZ_CONFIG = {
       content: "<p><strong>常规套餐默认每月订单日重置流量，您当月未用使用完的流量，不会累积到下个月</strong></p>",
       
       // 冷却时间（小时），在此时间内不会再次显示弹窗
-      cooldownHours: 0,
+      cooldownHours: 6,
       
       // 等待时间（秒），用户需要等待多少秒才能关闭弹窗，设为0表示无需等待
       closeWaitSeconds: 0
@@ -232,7 +231,7 @@ window.EZ_CONFIG = {
     resetTrafficDisplayMode: 'low',
     
     // 低流量阈值百分比 (1-100)，当剩余流量百分比低于此值时触发低流量警告
-    lowTrafficThreshold: 10,
+    lowTrafficThreshold: 20,
 
     // ===============================
     
@@ -262,15 +261,15 @@ window.EZ_CONFIG = {
     showMacOS: true,
     showWindows: true,
     showLinux: true,
-    showOpenWrt: true,
+    showOpenWrt: false,
 
     // 客户端下载链接  //可以改成文档链接直接在新标签页打开
     clientLinks: {
-      ios: 'https://apps.apple.com/app/xxx',
-      android: 'https://play.google.com/store/apps/xxx',
-      macos: 'https://github.com/xxx/releases/latest',
-      windows: 'https://github.com/xxx/releases/latest',
-      linux: 'https://github.com/xxx/releases/latest',
+      ios: 'http://download.onestep.lat',
+      android: 'http://download.onestep.lat',
+      macos: 'http://download.onestep.lat',
+      windows: 'http://download.onestep.lat',
+      linux: 'http://download.onestep.lat',
       openwrt: 'https://github.com/xxx/releases/latest'
     },
     
@@ -408,7 +407,7 @@ window.EZ_CONFIG = {
   // 充值相关配置
   WALLET_CONFIG: {
     // 预设充值金额选项（单位：元）
-    presetAmounts: [6, 30, 68, 128, 256, 328, 648, 1280],
+    presetAmounts: [10, 30, 68, 128, 256, 328, 648, 1280],
     
     // 默认选中的充值金额（如果设为null则不预选金额）
     defaultSelectedAmount: null,
@@ -445,11 +444,11 @@ window.EZ_CONFIG = {
     
     // 各浏览器是否被限制访问（true=限制访问，false=允许访问）
     restrictBrowsers: {
-      '360': true,     // 360浏览器
+      '360': false,     // 360浏览器
       'QQ': true,      // QQ浏览器
       'WeChat': true,  // 微信内置浏览器
-      'Baidu': true,   // 百度浏览器
-      'Sogou': true,   // 搜狗浏览器
+      'Baidu': false,   // 百度浏览器
+      'Sogou': false,   // 搜狗浏览器
       'UC': false,     // UC浏览器
       'Maxthon': false // 傲游浏览器
     },
